@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
     public static final String PARAM_PASSWORD = "password";
 
 
-    public static final String PAGE_OK = "pages/user.jsp";
+    public static final String PAGE_OK = "/pages/user.jsp";
     public static final String PAGE_ADMIN = "pages/adminPage.jsp";
     public static final String PAGE_ERROR = "error.jsp";
 
@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 
         if (userDao.findUserByLogin(login).getPassword().equals(password)) {
             req.getRequestDispatcher(PAGE_OK).forward(req, resp);
-//            resp.sendRedirect(PAGE_OK);
+
         } else {
             RequestDispatcher rd = getServletContext().getRequestDispatcher(PAGE_ERROR);
             out.println("Username or Password incorrect");
