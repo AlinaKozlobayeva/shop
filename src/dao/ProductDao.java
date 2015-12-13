@@ -22,7 +22,7 @@ public interface ProductDao extends GenericDao <String, Product> {
     boolean create(Product product);
 
     @Override
-    boolean update(String value);
+    boolean update(Product product);
 
     @Override
     boolean delete(String value);

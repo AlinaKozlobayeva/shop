@@ -7,8 +7,10 @@
 </head>
 <body>
 <div>
-    <form name="newProduct" action="createNewProduct" method="post" onsubmit="return ">
-        Product title: <input type="text" name="productName" datatype="text">
+    <form name="newProduct" action="createNewProduct" method="post" onsubmit="closePopUpWindow() ">
+
+        <input type="text" name="productName" datatype="text">
+
         <br>
         Price: <input type="text" name="price">
         <br>
@@ -17,7 +19,10 @@
         View:<input type="file" name="view">
         <br>
         <input type="submit" value="Submit">
+        <input type="button" value="Cancel" onclick="closePopUpWindow()">
+
     </form>
+
 </div>
 </body>
 </html>

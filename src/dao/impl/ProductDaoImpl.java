@@ -24,7 +24,7 @@ public class ProductDaoImpl implements ProductDao {
     private final String SQL_SELECT_PRODUCT_BY_NAME = "SELECT * FROM products WHERE " + ProductFields.PRODUCT_NAME + "=?";
     private final String SQL_SELECT_PRODUCT_BY_ID = "SELECT * FROM products WHERE" + ProductFields.PRODUCT_ID + "=?";
     private final String SQL_SELECT_ALL_PRODUCTS = "SELECT * FROM products";
-
+    private final String SQL_INSERT_PRODUCT = "INSERT INTO products VALUES (DEFAULT,?,?,?)";
 
     public ProductDaoImpl() {
         try {
@@ -123,11 +123,37 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public boolean create(Product product) {
-        return false;
+        boolean res = false;
+        Connection con = null;
+        int k = 1;
+        try {
+            con = getConnection();
+            PreparedStatement pstmt = con.prepareStatement(SQL_INSERT_PRODUCT, Statement.RETURN_GENERATED_KEYS);
+            pstmt.setString(k++, product.getProductName());
+            pstmt.setDouble(k++, product.getProductPrice());
+            pstmt.setString(k++, product.getProductView());
+
+            int count = pstmt.executeUpdate();
+            if (count > 0) {
+                ResultSet rs = pstmt.getGeneratedKeys();
+                res = true;
+                if (rs.next()) {
+                    product.setProductId(rs.getInt(1));
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Cannot insert the user: " + product);
+            e.printStackTrace();
+        } finally {
+            if (con != null) {
+                close(con);
+            }
+        }
+        return res;
     }
 
     @Override
-    public boolean update(String value) {
+    public boolean update(Product product) {
         return false;
     }
 

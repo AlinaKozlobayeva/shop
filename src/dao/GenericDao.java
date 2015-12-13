@@ -10,7 +10,7 @@ public interface GenericDao<K extends Serializable, T> {
     T findById(int id);
     List<T> findAll();
     boolean create (T value);
-    boolean update (K value);
+    boolean update (T value);
     boolean delete (K value);
 
 }

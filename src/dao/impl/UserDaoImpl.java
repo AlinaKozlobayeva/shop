@@ -100,6 +100,7 @@ public class UserDaoImpl implements UserDao {
             int count = pstmt.executeUpdate();
             if (count > 0) {
                 ResultSet rs = pstmt.getGeneratedKeys();
+                res = true;
                 if (rs.next()) {
                     user.setId(rs.getInt(1));
                 }
@@ -176,6 +177,7 @@ public class UserDaoImpl implements UserDao {
 
             int count = pstmt.executeUpdate();
             if (count > 0) {
+                res = true;
                 ResultSet rs = pstmt.getGeneratedKeys();
                 if (rs.next()) {
                     user.setId(rs.getInt(1));
@@ -193,9 +195,9 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean update(String login) {
+    public boolean update(User user) {
         Connection con = null;
-        User user = null;
+
         boolean res = false;
         int k = 1;
         try {
@@ -242,7 +244,7 @@ public class UserDaoImpl implements UserDao {
             close(con);
         }
 
-        return false;
+        return result;
     }
 
     private Connection getConnection() throws SQLException {

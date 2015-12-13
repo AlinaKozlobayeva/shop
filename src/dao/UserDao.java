@@ -23,7 +23,7 @@ public interface UserDao extends GenericDao<String, User> {
     boolean create(User user);
 
     @Override
-    boolean update(String value);
+    boolean update(User user);
 
     @Override
     boolean delete(String value);

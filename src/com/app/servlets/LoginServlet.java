@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter(PARAM_LOGIN);
         String password = req.getParameter(PARAM_PASSWORD);
-        log("Login="+login+":: password="+password);
+        log("Login=" + login + ":: password=" + password);
 
         UserDaoImpl userDao = DaoFactory.getUserDao();
         PrintWriter out = resp.getWriter();
@@ -42,12 +42,10 @@ public class LoginServlet extends HttpServlet {
 //        }
 
 
-        if(userDao.findUserByLogin(login).getLogin() == "admin" && userDao.findUserByLogin(login).getPassword() == password){
-            resp.sendRedirect(PAGE_OK);
-        }else if(userDao.findUserByLogin(login).getPassword() == password){
-            resp.sendRedirect(PAGE_OK);
-        }
-        else{
+        if (userDao.findUserByLogin(login).getPassword().equals(password)) {
+            req.getRequestDispatcher(PAGE_OK).forward(req, resp);
+//            resp.sendRedirect(PAGE_OK);
+        } else {
             RequestDispatcher rd = getServletContext().getRequestDispatcher(PAGE_ERROR);
             out.println("Username or Password incorrect");
             rd.include(req, resp);
