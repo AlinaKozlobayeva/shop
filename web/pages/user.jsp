@@ -13,8 +13,8 @@
 <body>
 
 <h1>
-  Welcom to yor userpage!
+  Welcome to your userpage!
 </h1>
-<a href="index.jsp">Login Page</a>
+<input type="button" value="Back" onclick="location.href='pages/index.jsp'">
 </body>
 </html>
