@@ -6,5 +6,5 @@ function openPopUpWindow(){
 }
 
 function closePopUpWindow(){
-    window.close();
+    return window.close();
 }
