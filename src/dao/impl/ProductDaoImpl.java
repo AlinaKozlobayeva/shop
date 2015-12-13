@@ -142,7 +142,7 @@ public class ProductDaoImpl implements ProductDao {
                 }
             }
         } catch (SQLException e) {
-            System.out.println("Cannot insert the user: " + product);
+            System.out.println("Cannot insert the product: " + product);
             e.printStackTrace();
         } finally {
             if (con != null) {
