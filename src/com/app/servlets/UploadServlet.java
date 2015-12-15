@@ -17,16 +17,18 @@ public class UploadServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+       super.doGet(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String productName = req.getParameter("productName");
         Part filePart = req.getPart("file");
         String fileName = getSubmittedFileName(filePart);
         InputStream fileContent = filePart.getInputStream();
         File uploads = new File("/path/to/uploads");
-    }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+
     }
 
     private static String getSubmittedFileName(Part part) {
