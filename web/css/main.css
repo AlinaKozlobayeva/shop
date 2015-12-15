@@ -1,0 +1,26 @@
+body {
+    height: auto;
+    width: 90%;
+    overflow: auto;
+    padding-left: 15px;
+
+}
+
+header {
+    height: 100px;
+}
+
+footer {
+    height: 100px;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    border: 2px black;
+}
+
+.formContainer{
+
+
+}

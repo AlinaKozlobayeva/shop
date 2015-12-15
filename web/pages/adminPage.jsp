@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>AdminPage</title>
-    <script type="text/javascript" src="/js/adminPage.js"></script>
+    <script type="text/javascript" src="../js/adminPage.js"></script>
 </head>
 <body>
 <h1>ADMIN PAGE</h1>
