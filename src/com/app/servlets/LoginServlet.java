@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
     public static final String PARAM_PASSWORD = "password";
 
 
-    public static final String PAGE_OK = "/pages/user.jsp";
+    public static final String PAGE_OK = "pages/user.jsp";
     public static final String PAGE_ADMIN = "pages/adminPage.jsp";
     public static final String PAGE_ERROR = "error.jsp";
 
