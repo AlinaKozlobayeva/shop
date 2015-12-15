@@ -23,11 +23,6 @@
         <url-pattern>pages/login</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>pages/user.jsp</url-pattern>
-    </servlet-mapping>
-
 
     <servlet-mapping>
         <servlet-name>NewUserServlet</servlet-name>
