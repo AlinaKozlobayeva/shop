@@ -18,15 +18,26 @@
         <servlet-class>com.app.servlets.NewUserServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>com.app.servlets.UploadServlet</servlet-class>
+    </servlet>
+
+
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>login</url-pattern>
+        <url-pattern>/pages/login</url-pattern>
     </servlet-mapping>
 
 
     <servlet-mapping>
         <servlet-name>NewUserServlet</servlet-name>
-        <url-pattern>signUp</url-pattern>
+        <url-pattern>/pages/signUp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/pages/createNewProduct</url-pattern>
     </servlet-mapping>
 
 </web-app>

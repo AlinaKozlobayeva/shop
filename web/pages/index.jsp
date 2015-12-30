@@ -12,7 +12,7 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
 <body>
 <div class="container">
@@ -26,9 +26,9 @@
             <input type="submit" value="Log In">
 
         </form>
-        <input type="button" value="Sign Up" onclick="location.href='pages/newUser.jsp'"/>
+        <input type="button" value="Sign Up" onclick="location.href='/pages/newUser.jsp'"/>
         <br>
-        <input type="button" value="admin" onclick="location.href='pages/adminPage.jsp'"/>
+        <input type="button" value="admin" onclick="location.href='/pages/adminPage.jsp'"/>
     </div>
 </div>
 

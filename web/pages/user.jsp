@@ -15,6 +15,6 @@
 <h1>
   Welcome to your userpage!
 </h1>
-<input type="button" value="Back" onclick="location.href='pages/index.jsp'">
+<input type="button" value="Back" onclick="location.href='../pages/index.jsp'">
 </body>
 </html>
