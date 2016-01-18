@@ -5,6 +5,7 @@ import dao.impl.ProductDaoImpl;
 import entity.Product;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +18,7 @@ import java.nio.file.Files;
 /**
  * Created by Alina on 11.12.2015.
  */
+@MultipartConfig
 public class UploadServlet extends HttpServlet {
 
    private static final String UPLOAD_LOCATION = "../downloads_image";
@@ -24,22 +26,23 @@ public class UploadServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("adminPage.jsp").forward(req, resp);
+        System.out.println("Hello");
 
 
     }
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String productName = req.getParameter("productName");
         String productPrice = req.getParameter("price");
-        String productManufacture = req.getParameter("manufacterer");
+        String productManufacture = req.getParameter("manufacturer");
 
 
-        Part filePart = req.getPart("file");
+        Part filePart = req.getPart("fileImg");
         String fileName = getSubmittedFileName(filePart);
         InputStream fileContent = filePart.getInputStream();
-        File uploadFile = new File(System.getenv(UPLOAD_LOCATION));
+        File uploadFile = new File(new File("d:/Soft/downloads_image"), fileName);
 
         try (InputStream input = filePart.getInputStream()) {
             Files.copy(input, uploadFile.toPath());
