@@ -1,2 +1,2 @@
 # connection url
-connection.url = jdbc:mysql://localhost/userdb?user=root&password=root
+connection.url = jdbc:mysql://localhost/shopdb?user=root&password=root

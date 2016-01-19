@@ -7,16 +7,14 @@
 </head>
 <body>
 <div>
-    <form name="newProduct" action="createNewProduct" method="post" onsubmit="closePopUpWindow() ">
-
-        <input type="text" name="productName" datatype="text">
-
+    <form name="newProduct" action="/pages/createNewProduct" method="post" enctype="multipart/form-data" onsubmit="closePopUpWindow()">
+        Product name:  <input type="text" name="productName" datatype="text">
         <br>
         Price: <input type="text" name="price">
         <br>
-        Manufacturer: <input type="email" name="manufacterer">
+        Manufacturer: <input type="text" name="manufacturer">
         <br>
-        View:<input type="file" name="view">
+        View:<input type="file" name="fileImg">
         <br>
         <input type="submit" value="Submit">
     </form>

@@ -12,26 +12,47 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script type="text/javascript" src="../js/dynamicTable.js"></script>
+
 </head>
 <body>
+<header>
+    <input type="button" value="Sign Up" onclick="location.href='/pages/newUser.jsp'"/>
+    <br>
+    <input type="button" value="admin" onclick="location.href='/pages/adminPage.jsp'"/>
+</header>
+
+
 <div class="container">
 
-    <div class="formContainer">
-        <form action="login" method="post">
-            Login:<br> <input type="text" name="login" required>
-            <br>
-            Password:<br> <input type="text" name="password" required>
-            <br>
-            <input type="submit" value="Log In">
+    <div class="table_body" id="tableArea">
 
-        </form>
-        <input type="button" value="Sign Up" onclick="location.href='pages/newUser.jsp'"/>
-        <br>
-        <input type="button" value="admin" onclick="location.href='pages/adminPage.jsp'"/>
+
+    </div>
+    <div id="login-form">
+        <h3>Login</h3>
+        <fieldset>
+
+            <div class="formContainer">
+                <form action="login" method="post">
+                    Login: <input type="login" name="login" required>
+                    <br>
+                    Password: <input type="password" name="password" required>
+                    <input type="submit" value="Log In">
+                </form>
+            </div>
+
+            <%--<footer class="clearfix">--%>
+            <%--<p><span class="info">?</span><a href="#">Forgot Password</a></p>--%>
+            <%--</footer>--%>
+        </fieldset>
     </div>
 </div>
 
-
+<footer class="main_footer">
+    <p>Produced by Alina Kozlobaeva</p>
+    <p>Mail Us: aaaa@gmail.com</p>
+</footer>
 </body>
 </html>

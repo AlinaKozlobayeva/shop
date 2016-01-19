@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - userdb@localhost" uuid="b6284a16-ffaa-498b-85ae-305eeeb3c931">
-    <database-info product="MySQL" version="5.7.9-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+  <data-source name="MySQL - shopdb@localhost" uuid="b6284a16-ffaa-498b-85ae-305eeeb3c931">
+    <database-info product="MySQL" version="5.6.22-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
-    <schema name="" catalog="userdb"/>
-    <table name="products" schema="" catalog="userdb" type="TABLE">
+    <schema name="" catalog="shopdb"/>
+    <table name="products" schema="" catalog="shopdb" type="TABLE">
       <column name="product_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="product_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="product_price" sqlType="DECIMAL UNSIGNED" precision="19" scale="4" nullable="false" jdbcType="3"/>
       <column name="product_view" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="product_id"/>
-      <exported-key name="product_id" table="sales" schema="" catalog="userdb" columns="product_id"/>
+      <exported-key name="product_id" table="sales" schema="" catalog="shopdb" columns="product_id"/>
     </table>
-    <table name="sales" schema="" catalog="userdb" type="TABLE">
+    <table name="sales" schema="" catalog="shopdb" type="TABLE">
       <column name="sale_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="product_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="sale_id"/>
-      <foreign-key name="product_id" columns="product_id" ref-table="products" ref-schema="" ref-catalog="userdb" ref-columns="product_id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="user_id" columns="user_id" ref-table="users" ref-schema="" ref-catalog="userdb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="product_id" columns="product_id" ref-table="products" ref-schema="" ref-catalog="shopdb" ref-columns="product_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="user_id" columns="user_id" ref-table="users" ref-schema="" ref-catalog="shopdb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="product_id_idx" unique="false" columns="product_id"/>
       <index name="user_id_idx" unique="false" columns="user_id"/>
     </table>
-    <table name="users" schema="" catalog="userdb" type="TABLE">
+    <table name="users" schema="" catalog="shopdb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="first_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
@@ -34,7 +34,7 @@
       <column name="login" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="password" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="user_id" table="sales" schema="" catalog="userdb" columns="user_id"/>
+      <exported-key name="user_id" table="sales" schema="" catalog="shopdb" columns="user_id"/>
     </table>
   </data-source>
 </component>
